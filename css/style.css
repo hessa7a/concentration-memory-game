@@ -60,7 +60,7 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgb(69, 71, 89);
-    perspective: 1000px;
+    perspective: 500px;
     
 }
 .card:hover{
@@ -95,4 +95,8 @@ justify-content: center;
 
 .back-card{
     transform: rotateY(180deg);
+}
+
+.card.flipped .card-flip{
+     transform: rotateY(180deg);
 }
