@@ -60,7 +60,7 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgb(69, 71, 89);
-    perspective: 500px;
+    perspective: 1000px;
     
 }
 .card:hover{
