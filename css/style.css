@@ -1,0 +1,66 @@
+
+
+
+body{
+    background-image: url("../assets/background.png");
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center ;
+    color: #edf6f6;
+    text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
+}
+
+p{
+    color: #edf6f6;
+    text-align: center ;
+    text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
+     font-size: 18px;
+}
+button{
+    padding: 5px ;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.game-info{
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+
+
+#game-board{
+    display: grid;
+    grid-template-columns: repeat(4, 130px );
+    gap: 20px;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color:  rgb(231, 239, 253) ;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+    
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+    object-fit:contain;
+}
+
