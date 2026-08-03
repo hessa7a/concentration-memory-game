@@ -7,6 +7,8 @@ let card2 = ""
 let alt1 = ""
 let alt2 = ""
 let moves = 0
+let countdown = 60;
+let timer;
 
 /*----- Cached Element References  -----*/
 
@@ -14,6 +16,8 @@ const restartBtn = document.querySelector('#restart-btn')
 const cards = document.querySelectorAll('.card')
 const elmntMoves = document.querySelector('#moves')
 const gameTimer = document.querySelector('#timer')
+const startBtn = document.querySelector('#start-btn')
+const gameBoard = document.querySelector('#game-board')
 
 
 
@@ -53,19 +57,12 @@ function matchingCards (){
       console.log(alt1)
       console.log(alt2)
     if (alt1 === alt2 ){
-         card1 = ""
-         card2 = ""
-         alt1 = ""
-         alt2 = ""
+         resetCards();
     }else {
         setTimeout(() => {
             card1.classList.remove('flipped')
             card2.classList.remove('flipped')
-
-            card1 = ""
-            card2 = ""
-            alt1 = ""
-            alt2 = ""
+            resetCards();
 
         }, 500);
         
@@ -78,16 +75,56 @@ function matchingCards (){
          cards.forEach((card) => {
         card.classList.remove('flipped')
     })
+            resetCards();
+
+            moves = 0
+             elmntMoves.textContent = moves;
+
+             clearInterval(timer)
+             countdown =60 
+             gameTimer.textContent= countdown
+
+    }
+    
+    function resetCards(){
             card1 = ""
             card2 = ""
             alt1 = ""
             alt2 = ""
-            moves = 0
-             elmntMoves.textContent = moves;
+    }
+
+    function startTimer(){
+        timer = setInterval(()=> {
+            countdown-- ;
+            gameTimer.textContent = countdown;
+
+            if (countdown === 0){
+                clearInterval(timer)
+            }
+        }, 1000);
 
     }
+
+
+    function startGame(){
+         cards.forEach((card) => {
+        card.classList.add('flipped')
+    })
+
+    setTimeout(()=>{
+        cards.forEach((card) => {
+        card.classList.remove('flipped')
+    })
+        startTimer()
     
 
+    }, 3000)
+    }
+
+
+    function shuffleCards (){
+        
+    }
      
  
 /*----------- Event Listeners ----------*/
@@ -97,4 +134,5 @@ cards.forEach ((card) => {
 });
 
 restartBtn.addEventListener('click', restartGame)
+startBtn.addEventListener('click', startGame)
 

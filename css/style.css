@@ -23,13 +23,12 @@ p{
     font-size: 18px;
 }
 button{
-    padding: 12px 25px ;
+    padding: 7px 25px ;
     border: none;
     border-radius: 5px;
     background-color: #edf6f6;
     display: block;
     margin: auto;
-    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -37,6 +36,13 @@ button:hover{
     transform: scale(1.05);
 }
 
+#start-btn{
+margin-bottom: 20px;
+}
+
+#restart-btn{
+margin-top: 20px;
+}
 
 .game-info{
 display: flex;
