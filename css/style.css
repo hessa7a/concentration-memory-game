@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 body{
     background-image: url("../assets/background.png");
@@ -11,14 +10,17 @@ body{
 h1{
     text-align: center ;
     color: #edf6f6;
-    text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
+    text-shadow: 2px 2px 4px rgb(65, 75, 103) ;
+    font-family: 'Chewy',cursive;
+    letter-spacing: 2px;
+    font-size: 40px;
 }
 
 p{
     color: #edf6f6;
     text-align: center ;
     text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
-     font-size: 18px;
+    font-size: 18px;
 }
 button{
     padding: 12px 25px ;
