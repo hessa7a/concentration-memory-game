@@ -9,6 +9,8 @@ let alt2 = ""
 let moves = 0
 let countdown = 60;
 let timer;
+let matchingPairs = 0 
+
 
 /*----- Cached Element References  -----*/
 
@@ -18,6 +20,8 @@ const elmntMoves = document.querySelector('#moves')
 const gameTimer = document.querySelector('#timer')
 const startBtn = document.querySelector('#start-btn')
 const gameBoard = document.querySelector('#game-board')
+const gameMessage = document.querySelector('#game-message')
+const totalPairs = cards.length/2
 
 
 
@@ -54,9 +58,16 @@ function flipCard(event) {
 function matchingCards (){
     alt1 = card1.querySelector('.back-card img').alt
     alt2 = card2.querySelector('.back-card img').alt
-      console.log(alt1)
-      console.log(alt2)
+      
     if (alt1 === alt2 ){
+
+        matchingPairs++;
+
+        if (matchingPairs === totalPairs){
+            clearInterval(timer)
+            gameMessage.textContent = "Congratulations! You Won!! ";
+        }
+
          resetCards();
     }else {
         setTimeout(() => {
@@ -100,6 +111,7 @@ function matchingCards (){
 
             if (countdown === 0){
                 clearInterval(timer)
+                gameMessage.textContent = "Oops, you lost. Try again :( ";
             }
         }, 1000);
 
@@ -107,23 +119,32 @@ function matchingCards (){
 
 
     function startGame(){
-         cards.forEach((card) => {
-        card.classList.add('flipped')
-    })
 
-    setTimeout(()=>{
+        shuffleCards();
+
         cards.forEach((card) => {
-        card.classList.remove('flipped')
-    })
-        startTimer()
-    
+        card.classList.add('flipped')
+        })
 
-    }, 3000)
+        setTimeout(()=>{
+            cards.forEach((card) => {
+            card.classList.remove('flipped')
+        })
+
+        startTimer()
+
+    }, 5000)
     }
 
 
     function shuffleCards (){
-        
+        const randomCards = [...cards]
+
+        randomCards.sort(() => Math.random() -0.5)
+
+        randomCards.forEach((card) =>{
+            gameBoard.appendChild(card)
+        })
     }
      
  
