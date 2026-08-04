@@ -10,6 +10,7 @@ let moves = 0
 let countdown = 60;
 let timer;
 let matchingPairs = 0 
+let gameStarted = false
 
 
 /*----- Cached Element References  -----*/
@@ -28,6 +29,9 @@ const totalPairs = cards.length/2
 /*-------------- Functions -------------*/
 
 function flipCard(event) {
+    if(!gameStarted){
+        return
+    }
     const clickedCard = event.currentTarget;
 
     if(clickedCard === card1){
@@ -66,6 +70,7 @@ function matchingCards (){
         if (matchingPairs === totalPairs){
             clearInterval(timer)
             gameMessage.textContent = "Congratulations! You Won!! ";
+            gameStarted = false;
         }
 
          resetCards();
@@ -112,6 +117,7 @@ function matchingCards (){
             if (countdown === 0){
                 clearInterval(timer)
                 gameMessage.textContent = "Oops, you lost. Try again :( ";
+                gameStarted = false
             }
         }, 1000);
 
@@ -119,6 +125,7 @@ function matchingCards (){
 
 
     function startGame(){
+        gameStarted = true
 
         shuffleCards();
 
