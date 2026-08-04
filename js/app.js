@@ -94,11 +94,15 @@ function matchingCards (){
             resetCards();
 
             moves = 0
+            matchingPairs = 0
              elmntMoves.textContent = moves;
+
+             gameStarted = false
 
              clearInterval(timer)
              countdown =60 
              gameTimer.textContent= countdown
+             gameMessage.textContent = ""
 
     }
     

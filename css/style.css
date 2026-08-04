@@ -31,33 +31,44 @@ p{
     text-align: center ;
     text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
     font-size: 18px;
-}
-
-.menuBtns{
-    margin-top: 20px;
+    font-family: 'Chewy',cursive;
+    letter-spacing: 2px;
 
 }
+
+
 button{
     padding: 7px 25px ;
     border: none;
     border-radius: 5px;
-    background-color: #edf6f6;
-    display: block;
-    margin: auto;
+    background: rgba(51, 116, 181, 0.5);
+    color: #edf6f6;
     cursor: pointer;
+    font-family: 'Chewy',cursive;
+    letter-spacing: 2px;
 }
+
+#back-btn{
+    position: absolute;
+    left: 20px;
+    color: #edf6f6;
+    text-shadow: 2px 2px 4px rgb(119, 113, 113) ;
+    background: rgba(64, 119, 175, 0.25);
+    font-size: 30px;
+}
+
+#game-btns{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
 
 button:hover{
     transform: scale(1.05);
 }
 
-#start-btn{
-margin-bottom: 20px;
-}
-
-#restart-btn{
-margin-top: 20px;
-}
 
 .game-info{
 display: flex;
@@ -71,7 +82,9 @@ justify-content: center;
     grid-template-columns: repeat(4, 130px );
     gap: 10px;
     justify-content: center;
+    margin-bottom: 50px;
 }
+
 
 .card{
     display: flex;
