@@ -7,7 +7,7 @@ let card2 = ""
 let alt1 = ""
 let alt2 = ""
 let moves = 0
-let countdown = 60;
+let countdown = Number(localStorage.getItem('timer')) ;
 let timer;
 let matchingPairs = 0 
 let gameStarted = false
@@ -24,6 +24,7 @@ const gameBoard = document.querySelector('#game-board')
 const gameMessage = document.querySelector('#game-message')
 const totalPairs = cards.length/2
 
+gameTimer.textContent=countdown
 
 
 /*-------------- Functions -------------*/
@@ -100,7 +101,7 @@ function matchingCards (){
              gameStarted = false
 
              clearInterval(timer)
-             countdown =60 
+             countdown = Number(localStorage.getItem('timer')) ;
              gameTimer.textContent= countdown
              gameMessage.textContent = ""
 
